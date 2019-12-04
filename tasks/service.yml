@@ -1,0 +1,6 @@
+- name: service start
+  service: 
+    name: "{{ web_svc }}"
+    state: started
+
+

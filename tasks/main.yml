@@ -1,0 +1,23 @@
+- name: install the apache server
+  yum: 
+     name: httpd
+     state: installed
+
+- import_tasks: service.yml
+
+- include_vars: redhat/ssl.yml
+
+- name: install mod_ssl
+  yum:
+    name: "{{ ssl_pkg }}"
+    state: installed
+
+- name: copy index html page
+  copy:
+   src: code/ 
+   dest: "{{web_root}}"
+
+
+
+
+

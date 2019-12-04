@@ -1,0 +1,4 @@
+<VirtualHost {{ansible_eth01_ipv4.address}}:80>
+servername {{ansible.fqdn}}
+documentroot {{web_root}}
+</VirtualHost>
